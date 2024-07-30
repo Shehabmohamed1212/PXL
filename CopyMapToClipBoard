@@ -32,6 +32,7 @@ for _, v in pairs(game.Workspace:GetDescendants()) do
 			end)
 			if Property then
 				Table[Number][v2] = v[v2]
+				print(`["{v2}"] = {v[v2]}`)
 			end
 		end
 	end
