@@ -1,1 +1,42 @@
+local sfsaf = game:GetService("clip")
 
+local Table = {}
+
+local Properties = {
+	"Name",
+	"Color",
+	"Tarnsparency",
+	"Size",
+	"Position",
+	"Orientation",
+	"CanCollide",
+	"CanTouch",
+	"Anchored",
+	"Shape",
+	"MeshId",
+	"TextureID",
+}
+
+local Number = 0
+
+local function hasProperty(object, prop)
+	local t = object[prop]
+end
+
+
+for _, v in pairs(game.Workspace:GetDescendants()) do
+	if v:IsA("BasePart") and not v:IsA("Terrain") then
+		Number += 1
+		Table[Number] = {}
+		for _, v2 in Properties do
+			local Property, code = pcall(function()
+				hasProperty(v, v2)
+			end)
+			if Property then
+				Table[Number][v2] = v[v2]
+			end
+		end
+	end
+end
+
+print(Table)
