@@ -1,5 +1,3 @@
-local sfsaf = game:GetService("clip")
-
 local Table = {}
 
 local Properties = {
