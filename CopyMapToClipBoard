@@ -38,4 +38,4 @@ for _, v in pairs(game.Workspace:GetDescendants()) do
 	end
 end
 
-print(Table)
+print(Table) 
